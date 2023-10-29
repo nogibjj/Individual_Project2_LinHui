@@ -1,19 +1,16 @@
-"""
-Main cli or app entry point
-"""
+import pandas as pd
+import time
 
-from mylib.calculator import add
-import click
+start_time = time.time()
 
-#var=1;var=2
+# 1. Load
+data = pd.read_csv('AAPL.csv')
 
-@click.command("add")
-@click.argument("a", type=int)
-@click.argument("b", type=int)
-def add_cli(a, b):
-    click.echo(add(a, b))
+# 2. Calculate the average closing price
+average_close = data['Close'].mean()
 
 
-if __name__ == "__main__":
-    # pylint: disable=no-value-for-parameter
-    add_cli()
+print(f"Average Closing Price: {average_close}")
+
+end_time = time.time()
+print(f"Execution time: {end_time - start_time} seconds")

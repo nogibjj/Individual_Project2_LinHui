@@ -1,19 +1,52 @@
-This is a template for course IDS706 Projects. It contains:
+# Mini Project 8 
 
-1. `.devcontainer` includes a Dockerfile and devcontainer.json. The 'Dockerfile' within this folder specifies how the container should be built, and other settings in this directory may control development environment configurations.
+This project consists of two implementations for calculating the average closing price of stock data: one written in Python and the other in Rust.
 
-2. `workflows` includes GitHub Actions, which contain configuration files for setting up automated build, test, and deployment pipelines for your project.
+## Dataset: Apple’s stock price in the past year
 
-3. `.gitignore` is used to specify which files or directories should be excluded from version control when using Git.
+Column:
 
-4. `Makefile` is a configuration file used in Unix-based systems for automating tasks and building software. It contains instructions and dependencies for compiling code, running tests, and other development tasks.
+- Date
+- Open price
+- High price
+- Low price
+- Adjusted close price
+- Trading volumn
 
-5. `README.md` is the instruction file for the readers.
+## Code Functionality
 
-6. `requirements.txt` is to specify the dependencies (libraries and packages) required to run the project.
+Both the Python and Rust implementations read a CSV file containing stock data, specifically focusing on the "Close" column, to compute the average closing price.
 
-7. `test_main.py` is a test file for main.py that can successfully run in IDEs.
+- **Python**: The code uses the pandas library to read the CSV file, extract the "Close" column, and calculate its mean.
 
-8. `main.py` is a Python file.
+- **Rust**: The Rust implementation employs the polars crate to achieve similar functionality, reading the CSV and computing the mean of the "Close" column.
 
-It used gitbuh actions to test and run. All processes are completed.
+
+## Cargo File
+
+The Cargo.toml file is specific to the Rust implementation. It's the manifest file for Rust's package manager, Cargo. The file contains metadata about the Rust project, such as its name, version, authors, and dependencies. In this project, the Cargo.toml file specifies dependencies like polars and other related configurations to ensure the Rust code runs correctly.
+
+
+## Performance Comparison
+
+From preliminary tests, it's evident that the Rust implementation offers a speed advantage over the Python version:
+
+- Python: The code executed in approximately 0.0072 seconds.
+- Rust: The Rust code took around 0.0222 seconds.
+
+
+Though Rust's performance in this test is slightly slower, Rust generally offers more consistent and predictable performance, especially in more extensive and complex workloads. The efficiency of Rust arises from its systems-level capabilities, no garbage collector, and optimization-friendly nature. In scenarios with larger datasets or more complex processing, the benefits of Rust would likely become even more pronounced.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
