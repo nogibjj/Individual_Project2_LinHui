@@ -5,7 +5,7 @@ use rusqlite::{Connection, params};
 
 fn main() -> Result<(), rusqlite::Error> {
     // Connect to the SQLite database
-    let conn = Connection::open("../AAPL.db")?;
+    let conn = Connection::open("AAPL.db")?;
 
     // CRUD Operations
 
