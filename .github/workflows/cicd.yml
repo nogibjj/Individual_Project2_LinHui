@@ -18,10 +18,13 @@ jobs:
 
       - name: lint
         run: make lint
+        working-directory: ./DataProc
       - name: format
         run: make format
+        working-directory: ./DataProc
       - name: test
         run: make test
+        working-directory: ./DataProc
 
       - name: Build in release mode
         run: cargo build --release
