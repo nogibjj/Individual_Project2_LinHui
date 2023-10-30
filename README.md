@@ -1,52 +1,67 @@
-# Mini Project 8 
+# Individual Project 2 - Rust CLI Binary with SQLite 
 
-This project consists of two implementations for calculating the average closing price of stock data: one written in Python and the other in Rust.
+This project is a Rust-based command-line interface (CLI) application that interfaces with a SQLite database. It demonstrates comprehensive use of Rust's syntax, unique features, and CRUD (Create, Read, Update, Delete) operations on a SQLite database.
 
-## Dataset: Apple’s stock price in the past year
+## Rust Source Code
 
-Column:
+The Rust code is structured to demonstrate a solid understanding of Rust's syntax and its unique features. Features include effective error handling, proper usage of Rust syntax, and the implementation of unique Rust characteristics.
 
-- Date
-- Open price
-- High price
-- Low price
-- Adjusted close price
-- Trading volumn
+## AAPL.db Database Structure
 
-## Code Functionality
+The AAPL.db SQLite database hosts financial data specifically related to Apple Inc. (AAPL) for the last year. It contains a table named my_table which stores daily stock market metrics for AAPL. The columns in this table represent:
 
-Both the Python and Rust implementations read a CSV file containing stock data, specifically focusing on the "Close" column, to compute the average closing price.
+- Date: The specific trading day.
+- Open: The stock price at the market's open.
+- High: The highest stock price during the trading day.
+- Low: The lowest stock price during the trading day.
+- Close: The stock price at the market's close.
+- Volume: The number of shares traded on that day.
+- Adjusted: The adjusted closing price, accounting for factors like dividends and stock splits.
 
-- **Python**: The code uses the pandas library to read the CSV file, extract the "Close" column, and calculate its mean.
+## SQLite Database CRUD Operations
 
-- **Rust**: The Rust implementation employs the polars crate to achieve similar functionality, reading the CSV and computing the mean of the "Close" column.
+The application interfaces with a SQLite database to perform CRUD operations, which include:
 
+- **Create**: 
+A new record is added to the database. For instance, a record might be created with data such as Date: 2023-10-01, Open: 100.50, High: 105.00, Low: 99.50, Close: 104.00, Volume: 5000, and Adjusted: 103.50.
 
-## Cargo File
+- **Read**: 
+First 5 records were fetched to analyze the stock's performance for a glance.
 
-The Cargo.toml file is specific to the Rust implementation. It's the manifest file for Rust's package manager, Cargo. The file contains metadata about the Rust project, such as its name, version, authors, and dependencies. In this project, the Cargo.toml file specifies dependencies like polars and other related configurations to ensure the Rust code runs correctly.
+- **Update**: 
+The Close value for the record on 2023-10-01 was updated to reflect end-of-day adjustments.
 
+- **Delete**:
+The record for 2023-10-01 was deleted to maintain data integrity.
 
-## Performance Comparison
+## Use of GitHub Copilot
 
-From preliminary tests, it's evident that the Rust implementation offers a speed advantage over the Python version:
+Throughout the development of this project, GitHub Copilot was instrumental in providing code suggestions, especially when converting the initial Python codebase to Rust. Additionally, Copilot was used to help compose terms for the Makefile, streamlining the build and test processes.
 
-- Python: The code executed in approximately 0.0072 seconds.
-- Rust: The Rust code took around 0.0222 seconds.
+## Optimized Rust Binary
 
+The project includes a GitHub Actions workflow that automates the process of testing, building, and linting the Rust code. As part of this automation, an optimized Rust binary is generated as an artifact, which can be downloaded directly from the GitHub repository.
 
-Though Rust's performance in this test is slightly slower, Rust generally offers more consistent and predictable performance, especially in more extensive and complex workloads. The efficiency of Rust arises from its systems-level capabilities, no garbage collector, and optimization-friendly nature. In scenarios with larger datasets or more complex processing, the benefits of Rust would likely become even more pronounced.
+## Dependencies
 
+The project relies on several Rust libraries and tools, such as rusqlite, as specified in Cargo.toml, and will be automatically compiled when it runs.
 
+## How to Run
 
+1. Clone the repository.
+2. Navigate to the project directory and run the project with
+```bash
+cargo run
+```
 
+or release the project with 
+```bash
+cargo build --release
+```
 
+## GitHub Actions
 
+A GitHub Actions workflow (cicd.yml) is set up to automate testing, building, and linting of the Rust code. This ensures code quality, correct building of the Rust code, and adherence to Rust coding standards through linting.
 
-
-
-
-
-
-
+## Video Demo
 
