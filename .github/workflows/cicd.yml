@@ -17,7 +17,9 @@ jobs:
           override: true
 
       - name: Build in release mode
-        run: cargo build --release
+        run: 
+          cd DataProc/
+          cargo build --release
 
       - name: Upload binary as artifact
         uses: actions/upload-artifact@v2
