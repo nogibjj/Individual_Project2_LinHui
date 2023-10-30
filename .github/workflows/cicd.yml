@@ -31,7 +31,7 @@ jobs:
 
       - name: Build in release mode
         run: cargo build --release
-        working-directory: ./DataProc
+
       - name: Upload binary as artifact
         uses: actions/upload-artifact@v2
         with:
