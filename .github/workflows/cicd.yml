@@ -14,8 +14,11 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+          components: clippy, rustfmt
           override: true
 
+      - name: update Rust
+        run: make install
       - name: Install Clippy
         run: rustup component add clippy
 

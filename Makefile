@@ -7,6 +7,9 @@ rust-version:
 	clippy-driver --version      # Rust linter
 
 
+# if any install
+install:
+
 # Format code using rustfmt
 format:
 	cargo fmt --quiet
