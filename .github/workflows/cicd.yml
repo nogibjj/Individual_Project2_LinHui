@@ -16,6 +16,9 @@ jobs:
           toolchain: stable
           override: true
 
+      - name: Install Clippy
+        run: rustup component add clippy
+
       - name: lint
         run: make lint
         working-directory: ./DataProc
