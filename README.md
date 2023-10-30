@@ -1,3 +1,5 @@
+[![CI](https://github.com/nogibjj/Individual_Project2_LinHui/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Individual_Project2_LinHui/actions/workflows/cicd.yml)
+
 # Individual Project 2 - Rust CLI Binary with SQLite 
 
 This project is a Rust-based command-line interface (CLI) application that interfaces with a SQLite database. It demonstrates comprehensive use of Rust's syntax, unique features, and CRUD (Create, Read, Update, Delete) operations on a SQLite database.
