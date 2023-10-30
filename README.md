@@ -18,7 +18,7 @@ The AAPL.db SQLite database hosts financial data specifically related to Apple I
 - Low: The lowest stock price during the trading day.
 - Close: The stock price at the market's close.
 - Volume: The number of shares traded on that day.
-- Adjusted: The adjusted closing price, accounting for factors like dividends and stock splits.
+- Adj Close: The adjusted closing price, accounting for factors like dividends and stock splits.
 
 ## SQLite Database CRUD Operations
 
